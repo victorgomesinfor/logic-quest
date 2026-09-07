@@ -180,6 +180,17 @@ dialog {
     font-size: 14px;
 }
 
+.btn-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    color: var(--text-dim);
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .version {
     font-size: 10px;
     color: var(--muted);
