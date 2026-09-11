@@ -4,6 +4,13 @@ const modal = document.getElementById('dialog-name');
 const close = document.getElementById('close');
 const form = document.getElementById('form');
 const submit = document.getElementById('input');
+const playerData = localStorage.getItem('player');
+let player = null;
+
+if(playerData){
+     player = JSON.parse(playerData);
+    
+}
 
 //abre janela modal
 button.onclick = function() {
@@ -37,3 +44,4 @@ form.addEventListener('submit', function(event) {
     alert("Bem-vindo ao Logic Quest!" + " " + name + " vamos começar nossa aventura!");
 
 });
+
