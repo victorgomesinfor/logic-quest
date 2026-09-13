@@ -1,47 +1,83 @@
+import { startPlayerTransition } from './animation.js';
+
+
+// ========================================
+// ELEMENTOS
+// ========================================
 
 const button = document.getElementById('btn-start');
 const modal = document.getElementById('dialog-name');
 const close = document.getElementById('close');
 const form = document.getElementById('form');
-const submit = document.getElementById('input');
+const input = document.getElementById('input');
+
+
+// ========================================
+// ESTADO DO JOGADOR
+// ========================================
+
 const playerData = localStorage.getItem('player');
+
 let player = null;
 
-if(playerData){
-     player = JSON.parse(playerData);
-    
+if (playerData) {
+    try {
+        player = JSON.parse(playerData);
+    } catch (error) {
+        console.error('Não foi possível recuperar o jogador:', error);
+        localStorage.removeItem('player');
+    }
 }
 
-//abre janela modal
-button.onclick = function() {
+
+// ========================================
+// MODAL
+// ========================================
+
+button.addEventListener('click', () => {
     modal.showModal();
-}
+    input.focus();
+});
 
-//Fecha janela modal
-close.onclick = function() {
+close.addEventListener('click', () => {
     modal.close();
-}
+});
 
-//Captura o nome inputado e cria o player, depois mostra um alert mostrando que tudo deu certo.
-form.addEventListener('submit', function(event) {
+
+// ========================================
+// CRIAÇÃO DO JOGADOR
+// ========================================
+
+form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const name = submit.value;
+    const name = input.value.trim();
 
-    if(name.trim() === ''){
-        alert ('Digite seu nome!')
-        return
+    if (name === '') {
+        alert('Digite seu nome!');
+        input.focus();
+        return;
     }
 
-    const player = {
-        name: name,
+    player = {
+        name,
         level: 1,
         xp: 0,
         score: 0
     };
 
-    localStorage.setItem('player', JSON.stringify(player));
-    alert("Bem-vindo ao Logic Quest!" + " " + name + " vamos começar nossa aventura!");
+    localStorage.setItem(
+        'player',
+        JSON.stringify(player)
+    );
 
+    modal.close();
+
+    startPlayerTransition(player, () => {
+        console.log('Transição concluída.');
+        console.log('Jogador:', player);
+
+        // Próxima etapa:
+        // iniciar a Fase 01
+    });
 });
-
