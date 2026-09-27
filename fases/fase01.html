@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Logic Quest — Fase 01</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/fase01.css"
+    >
+
+</head>
+
+<body>
+
+    <main class="phase">
+
+        <section class="phase-header">
+
+            <span class="phase-number">
+                FASE 01
+            </span>
+
+            <h1>
+                VARIÁVEIS
+            </h1>
+
+            <span class="phase-status">
+                SISTEMA RESTAURANDO
+            </span>
+
+        </section>
+
+
+        <section class="phase-content">
+
+            <div class="terminal">
+
+                <div class="terminal-header">
+
+                    <span>LOGIC QUEST SYSTEM</span>
+
+                    <span class="terminal-status">
+                        ● ONLINE
+                    </span>
+
+                </div>
+
+
+                <div class="terminal-body">
+
+                    <p class="system-message">
+                        O sistema precisa guardar algumas informações.
+                    </p>
+
+                    <p class="system-message">
+                        Essas informações poderão ser acessada posteriormente.
+                    </p>
+
+
+                    <div class="concept-box">
+
+                        <span class="concept-label">
+                            CONCEITO
+                        </span>
+
+                        <h2>
+                            VARIÁVEL
+                        </h2>
+
+                        <p>
+                            Uma variável é um espaço na memória utilizado para armazenar uma informação.
+                            Podemos comparar uma variável com uma caixinha com etiqueta, onde você guarda a informação para usar depois.
+                            Essa variável pode ser acessada/reutilizada ou atualizada quantas vezes for preciso.
+                        </p>
+
+                    </div>
+
+
+                    <div class="example-box">
+
+                        <span class="example-label">
+                            EXEMPLO
+                        </span>
+
+                        <pre>idade &lt;- 20</pre>
+
+                        <p>
+                            A variável
+                            <strong>idade</strong>
+                            recebe o valor
+                            <strong>20</strong>.
+                        </p>
+
+                    </div>
+
+                    <div class="example-box">
+
+                        <span class="example-label">
+                            EXEMPLO 2
+                        </span>
+
+                        <pre>idade</pre>
+
+                        <p>
+                            A variável
+                            <strong>idade</strong>
+                            pode ser usada em outras partes do codigo ou atualizada.
+                            <pre>idade &lt;- 58</pre>
+                            Agora a variável idade tem um inteiro 58.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="btn-continue"
+                        id="btn-continue"
+                        type="button"
+                    >
+                        [ CONTINUAR ]
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="phase-footer">
+
+            <span>
+                LOGIC QUEST ENGINE
+            </span>
+
+            <span>
+                LVL 01
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        const button = document.getElementById('btn-continue');
+
+        button.addEventListener('click', () => {
+
+            console.log('Iniciando desafios da Fase 01.');
+
+        });
+
+    </script>
+
+</body>
+
+</html>
