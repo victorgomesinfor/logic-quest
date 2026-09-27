@@ -346,6 +346,8 @@ export function startPlayerTransition(
             if (onComplete) {
                 onComplete();
             }
+
+            window.location.href = './fases/fase01.html';
         }
     });
 
